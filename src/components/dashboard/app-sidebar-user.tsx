@@ -102,12 +102,12 @@ export const AppSidebarUser = () => {
               </Link>
 
               {/* Docs */}
-              <DropdownMenuItem
-                onClick={() => window.open('https://docs.sensix.app', '_blank')}
-              >
-                <BookOpen className="mr-2 h-4 w-4" />
-                Docs
-              </DropdownMenuItem>
+              <Link href="/docs">
+                <DropdownMenuItem>
+                  <BookOpen className="mr-2 h-4 w-4" />
+                  Docs
+                </DropdownMenuItem>
+              </Link>
 
               {/* Account */}
               <Link href="/account">

@@ -67,10 +67,10 @@ const ExploreItems = [
   },
   {
     title: 'Docs',
-    url: 'https://docs.sensix.app',
+    url: '/docs',
     segment: 'docs',
     icon: BookOpen,
-    external: true,
+    external: false,
   },
   {
     title: 'Memories',

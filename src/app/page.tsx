@@ -33,7 +33,7 @@ import { cn } from '@/lib/utils';
 
 const navItems = [
   { label: 'Github', href: 'https://github.com/sensixapp', icon: GitHubLogoIcon },
-  { label: 'Docs', href: 'https://docs.sensix.app', icon: BookOpenIcon },
+  { label: 'Docs', href: '/docs', icon: BookOpenIcon },
 ];
 
 const Header = ({ handleLogin }: { handleLogin: () => void }) => {
