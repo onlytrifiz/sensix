@@ -32,8 +32,8 @@ import { RainbowButton } from '@/components/ui/rainbow-button';
 import { cn } from '@/lib/utils';
 
 const navItems = [
-  { label: 'Github', href: 'https://github.com/sensixapp', icon: GitHubLogoIcon },
-  { label: 'Docs', href: '/docs', icon: BookOpenIcon },
+  { label: 'Github', href: 'https://github.com/sensixapp', icon: GitHubLogoIcon, external: true },
+  { label: 'Docs', href: '/docs', icon: BookOpenIcon, external: false },
 ];
 
 const Header = ({ handleLogin }: { handleLogin: () => void }) => {
@@ -52,7 +52,7 @@ const Header = ({ handleLogin }: { handleLogin: () => void }) => {
               <nav className="hidden md:ml-auto md:mr-8 md:flex">
                 {navItems.map((item) => {
                   const Icon = item.icon;
-                  return (
+                  return item.external ? (
                     <a
                       key={item.label}
                       href={item.href}
@@ -64,6 +64,16 @@ const Header = ({ handleLogin }: { handleLogin: () => void }) => {
                       {item.label}
                       <span className="absolute inset-x-4 -bottom-px h-px scale-x-0 bg-gradient-to-r from-primary/0 via-primary/70 to-primary/0 transition-transform duration-300 group-hover:scale-x-100" />
                     </a>
+                  ) : (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      className="group relative flex items-center gap-1.5 px-4 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      <Icon className="h-4 w-4" />
+                      {item.label}
+                      <span className="absolute inset-x-4 -bottom-px h-px scale-x-0 bg-gradient-to-r from-primary/0 via-primary/70 to-primary/0 transition-transform duration-300 group-hover:scale-x-100" />
+                    </Link>
                   );
                 })}
               </nav>
@@ -109,7 +119,7 @@ const Header = ({ handleLogin }: { handleLogin: () => void }) => {
               <nav className="flex flex-col gap-1.5">
                 {navItems.map((item) => {
                   const Icon = item.icon;
-                  return (
+                  return item.external ? (
                     <a
                       key={item.label}
                       href={item.href}
@@ -121,6 +131,16 @@ const Header = ({ handleLogin }: { handleLogin: () => void }) => {
                       <Icon className="h-4 w-4" />
                       {item.label}
                     </a>
+                  ) : (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-primary/5 hover:text-primary"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <Icon className="h-4 w-4" />
+                      {item.label}
+                    </Link>
                   );
                 })}
               </nav>
