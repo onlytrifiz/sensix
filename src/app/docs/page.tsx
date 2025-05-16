@@ -10,7 +10,7 @@ export default function DocsPage() {
       </p>
 
       {/* Product Image placeholder */}
-      {/* <img src="/product.png" alt="Product Demo" className="my-6 rounded-xl border shadow" /> */}
+      {/* <Image src="/product.png" alt="Product Demo" width={600} height={300} className="my-6 rounded-xl border shadow" /> */}
 
       <h2>Key Capabilities</h2>
 
@@ -23,7 +23,7 @@ export default function DocsPage() {
 
       <h3>Deep Solana Integration</h3>
       <ul>
-        <li>Native support for Solana's high-performance blockchain</li>
+        <li>Native support for Solana&apos;s high-performance blockchain</li>
         <li>Integrated wallet management with real-time portfolio insights</li>
         <li>Full-featured NFT collection tracking and analytics</li>
         <li>Live monitoring of market trends and asset performance</li>

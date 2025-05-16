@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const navItems = [
   { label: "Overview", href: "/docs" },
@@ -21,11 +22,13 @@ export default function DocsLayout({ children }: { children: ReactNode }) {
         <nav className="space-y-2">
           <div className="mb-4 pl-1 flex items-center">
             <Link href="/docs" prefetch={false} className="focus:outline-none">
-              <img
+              <Image
                 src="/letter.svg"
                 alt="Neur Letter Logo"
+                width={60}
+                height={40}
                 className="h-10 w-auto mb-2 drop-shadow-sm"
-                style={{ maxWidth: 60 }}
+                priority
               />
             </Link>
           </div>
